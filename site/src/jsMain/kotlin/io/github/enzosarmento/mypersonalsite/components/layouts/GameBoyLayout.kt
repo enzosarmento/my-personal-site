@@ -12,12 +12,13 @@ import com.varabyte.kobweb.compose.ui.modifiers.left
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.right
 import com.varabyte.kobweb.compose.ui.modifiers.width
+import com.varabyte.kobweb.core.layout.Layout
 import io.github.enzosarmento.mypersonalsite.GAME_BOY_COLOR
 import io.github.enzosarmento.mypersonalsite.LineStyle
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
-
+@Layout
 @Composable
 fun GameBoyLayout(content: @Composable () -> Unit) {
     GameBoyLines()
