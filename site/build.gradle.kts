@@ -1,4 +1,5 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.link
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -14,6 +15,10 @@ kobweb {
     app {
         index {
             description.set("Powered by Kobweb")
+            faviconPath.set("assets/gameboy.ico")
+            head.add {
+                link(rel = "stylesheet", href = "/assets/fonts/faces.css")
+            }
         }
     }
 }

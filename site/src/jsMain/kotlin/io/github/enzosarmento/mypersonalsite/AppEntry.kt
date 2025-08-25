@@ -11,7 +11,6 @@ import com.varabyte.kobweb.silk.init.InitSilkContext
 import com.varabyte.kobweb.silk.init.registerStyleBase
 import com.varabyte.kobweb.silk.style.common.SmoothColorStyle
 import com.varabyte.kobweb.silk.style.toModifier
-import org.jetbrains.compose.web.css.*
 
 @InitSilk
 fun initStyles(ctx: InitSilkContext) {
