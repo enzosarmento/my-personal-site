@@ -7,6 +7,9 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
+import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.height
 import com.varabyte.kobweb.compose.ui.modifiers.padding
@@ -20,6 +23,7 @@ import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.fontSize
 import org.jetbrains.compose.web.css.marginLeft
 import org.jetbrains.compose.web.css.percent
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
@@ -28,6 +32,7 @@ import org.jetbrains.compose.web.dom.Text
 fun HeaderSection() {
     Row(
         Modifier
+            .fillMaxSize()
             .backgroundColor(DISPLAY_COLOR)
             .padding(
                 left = 1.cssRem,

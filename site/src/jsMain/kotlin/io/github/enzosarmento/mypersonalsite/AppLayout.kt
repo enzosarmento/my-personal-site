@@ -18,6 +18,7 @@ val GAME_BOY_COLOR = Color.rgb(0xcec8c0)
 val GAME_BOY_BORDER_COLOR = Color.rgb(0x545960)
 val DISPLAY_COLOR = Color.rgb(0xe0f8cf)
 val TEXT_COLOR = Color.rgb(0x332c50)
+val ABOUT_BACK_COLOR = Color.rgb(0xF5F7FA)
 
 val LineStyle = Modifier
     .backgroundColor(GAME_BOY_BORDER_COLOR)

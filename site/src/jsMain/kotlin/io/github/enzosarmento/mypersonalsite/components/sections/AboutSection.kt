@@ -8,18 +8,23 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.alignContent
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
+import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
 import com.varabyte.kobweb.compose.ui.modifiers.color
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.lineHeight
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
+import io.github.enzosarmento.mypersonalsite.ABOUT_BACK_COLOR
 import io.github.enzosarmento.mypersonalsite.ButtonStyle
 import io.github.enzosarmento.mypersonalsite.DISPLAY_COLOR
 import io.github.enzosarmento.mypersonalsite.GAME_BOY_COLOR
 import io.github.enzosarmento.mypersonalsite.TEXT_COLOR
 import org.jetbrains.compose.web.css.JustifyContent
 import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.H5
 import org.jetbrains.compose.web.dom.P
@@ -29,9 +34,11 @@ import org.jetbrains.compose.web.dom.Text
 fun AboutSection() {
     Column(
         modifier = Modifier
-            .backgroundColor(GAME_BOY_COLOR)
+            .fillMaxSize()
+            .backgroundColor(ABOUT_BACK_COLOR)
             .fontFamily("GameBoy")
-            .padding(left = 1.cssRem, right = 1.cssRem, bottom = 1.cssRem),
+            .padding(left = 1.cssRem, right = 1.cssRem, bottom = 1.cssRem)
+            .borderRadius(bottomRight = 60.px),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Column(
