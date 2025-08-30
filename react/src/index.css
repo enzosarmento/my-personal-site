@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+    --bg-color: #cec8c0;
+    --text-color: #332c50;
+    --border-color: #545960;
+    --display-color: #e0f8cf;
+    --buton-color: #D95763;
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+.display {
+    display: flex;
+    background-color: var(--display-color);
+}
+
+.game-boy-layout {
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-horizontal {
+    width: 100%;
+    height: 8px;
+    position: absolute;
+    background-color: var(--border-color);
+    top: 3%;
+}
+
+.line-vertical {
+    width: 8px;
+    height: 3.5%;
+    position: absolute;
+    background-color: var(--border-color);
+}
+
+.line-vertical.left {
+    left: 10%;
+    right: auto;
+}
+
+.line-vertical.right {
+    left: auto;
+    right: 10%;
+}
