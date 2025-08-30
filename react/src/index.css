@@ -8,15 +8,73 @@
     --buton-color: #D95763;
 }
 
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('./assets/fonts/PressStart2P-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'EightBit';
+    src: url('./assets/fonts/8bit.ttf');
+}
+
+@font-face {
+    font-family: 'Gameboy';
+    src: url('./assets//fonts/early-gameboy.ttf');
+}
+
+h1 {
+    font-family: 'Gameboy';
+}
+
 .home-page {
+    max-width: 400px;
     display: flex;
     flex-direction: column;
-    padding: 2em;
+    border: 2em solid var(--border-color);
+    border-radius: 1em 1em 3em 1em;
 }
 
 .display {
     display: flex;
     background-color: var(--display-color);
+    font-family: 'EightBit';
+    color: var(--text-color);
+}
+
+.apresentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.about {
+    background-color: #F5F7FA;
+    padding: 0.7em;
+    color: var(--text-color);
+}
+
+.about h2 {
+    font-family: 'Gameboy';
+    margin-bottom: 0.5em;
+}
+
+.about p {
+    font-family: 'EightBit';
+}
+
+.about button {
+    background-color: var(--buton-color);
+    color: white;
+    font-family: 'Gameboy';
+    padding: 0.5em 1em;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1em;
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.4);
 }
 
 .game-boy-layout {

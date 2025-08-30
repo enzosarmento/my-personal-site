@@ -2,10 +2,10 @@ import enzoAvatar from "../assets/enzo-avatar.png"
 
 function HomePage() {
     return (
-        <div className="home-page">
+        <>
             <Apresentation/>
             <About />
-        </div>
+        </>
     )
 }
 
@@ -13,8 +13,8 @@ function Apresentation() {
     return(
         <div className="display">
             <img src={enzoAvatar} alt="pixelated avatar" className="size-45"></img>
-            <section>
-                <h2>Enzo Sarmento</h2>
+            <section className="apresentation">
+                <h1>Enzo Sarmento</h1>
                 <p>
                     I'm a developer
                 </p>
@@ -25,11 +25,16 @@ function Apresentation() {
 
 function About() {
     return(
-        <section>
-            <h2>ABOUT ME</h2>
-            <p>
+        <section className="about">
+            <h2 className="">ABOUT ME</h2>
+            <p className="text-justify">
                 I'm a developer, I love to code and I'm always looking for new challenges to learn and improve my skills.
             </p>
+            <div className="text-center">
+                <button>
+                    DONWLOAD CV
+                </button>
+            </div>
         </section>
     )
 }
