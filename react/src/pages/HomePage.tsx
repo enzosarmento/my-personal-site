@@ -13,10 +13,10 @@ function Apresentation() {
     return(
         <div className="display">
             <img src={enzoAvatar} alt="pixelated avatar" className="size-45"></img>
-            <section className="apresentation">
+            <section className="apresentation p-2">
                 <h1>Enzo Sarmento</h1>
                 <p>
-                    I'm a developer
+                    I'm a Computer Science Student
                 </p>
             </section>
         </div>
@@ -24,9 +24,6 @@ function Apresentation() {
 }
 
 function About() {
-
-    const fileUrl = "../assets/"
-
     return(
         <section className="about">
             <h2 className="">ABOUT ME</h2>

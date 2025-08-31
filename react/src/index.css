@@ -9,6 +9,12 @@
     --border-color: #545960;
     --display-color: #e0f8cf;
     --buton-color: #D95763;
+    --brick-color: #c6b7be;
+    --mortar-color: #c2b1b9;
+
+    --brick-width: 120px;
+    --brick-height: 35px;
+    --mortar-thickness: 5px;
 }
 
 /* ==========================================================================
@@ -266,7 +272,29 @@ nav a:hover {
     .site {
         padding: 2em;
         align-items: center;
-        background-color: #c6b7be;
+
+        background-color: var(--brick-color);
+        background-size: var(--brick-width) calc(var(--brick-height) * 2);
+        background-image:
+            /* Camada 1: Linhas Verticais Alternadas */
+            repeating-linear-gradient(
+            60deg, /* Da esquerda para a direita */
+            var(--mortar-color),
+            var(--mortar-color) var(--mortar-thickness),
+            transparent var(--mortar-thickness),
+            transparent calc(var(--brick-width) / 2)
+            ),
+            /* Camada 2: Linhas Horizontais */
+            repeating-linear-gradient(
+            0deg, /* De baixo para cima */
+            var(--mortar-color),
+            var(--mortar-color) var(--mortar-thickness),
+            transparent var(--mortar-thickness),
+            transparent var(--brick-height)
+            );
+        
+        /* Desloca as linhas verticais da primeira fileira */
+        background-position: calc(var(--brick-width) / 2) 0;
     }
 
     .gameboy {
