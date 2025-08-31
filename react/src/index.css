@@ -62,7 +62,6 @@ h1 {
    3. Layout Styles
    ========================================================================== */
 .site {
-    /* Estilos base para mobile-first */
     display: flex;
     justify-content: center;
     min-height: 100vh;
@@ -276,29 +275,26 @@ nav a:hover {
         background-color: var(--brick-color);
         background-size: var(--brick-width) calc(var(--brick-height) * 2);
         background-image:
-            /* Camada 1: Linhas Verticais Alternadas */
             repeating-linear-gradient(
-            60deg, /* Da esquerda para a direita */
+            60deg,
             var(--mortar-color),
             var(--mortar-color) var(--mortar-thickness),
             transparent var(--mortar-thickness),
             transparent calc(var(--brick-width) / 2)
             ),
-            /* Camada 2: Linhas Horizontais */
             repeating-linear-gradient(
-            0deg, /* De baixo para cima */
+            0deg,
             var(--mortar-color),
             var(--mortar-color) var(--mortar-thickness),
             transparent var(--mortar-thickness),
             transparent var(--brick-height)
             );
         
-        /* Desloca as linhas verticais da primeira fileira */
         background-position: calc(var(--brick-width) / 2) 0;
     }
 
     .gameboy {
-        margin-top: 0; /* Reseta a margem do mobile */
+        margin-top: 0;
         border-radius: 1em 1em 7em 1em;
         background-color: var(--bg-color);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

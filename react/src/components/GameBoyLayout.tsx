@@ -72,8 +72,8 @@ function DPad() {
 function ButtonsAB() {
     return (
         <div className="buttons-a-b">
-            <button className="button-a">A</button>
             <button className="button-b">B</button>
+            <button className="button-a">A</button>
         </div>
     )
 }
