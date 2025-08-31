@@ -50,6 +50,11 @@ nav {
     padding: 1em 0;
     font-family: 'EightBit';
     text-transform: uppercase;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    color: var(--buton-color);
 }
 
 .home-page {
@@ -93,6 +98,15 @@ nav {
     font-family: 'EightBit';
 }
 
+.buttons {
+    min-width: 365px;
+    max-width: 420px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em 0;
+}
+
 .button-red {
     background-color: var(--buton-color);
     color: white;
@@ -105,14 +119,130 @@ nav {
     transition: all 0.07s ease-in-out;
 }
 
-.button-red:active {
+.buttons-a-b {
+    margin-left: 3em;
+    border: 2px solid #b0afaf;
+    padding: .5em;
+    border-radius: 2em;
+    rotate: -25deg;
+}
+
+.button-red:active,
+.buttons-a-b button:active {
     translate: 2px 2px;
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.6);
     border-color: #490f23;
 }
 
-.game-boy-layout {
+.buttons-a-b button {
+    color: white;
+    font-family: 'Gameboy';
+    width: 50px;
+    height: 50px;
+    background-color: var(--buton-color);
+    border: 2px solid #000000;
+    border-radius: 50%;
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.07s ease-in-out;
+    margin: 0 10px;
+}
+
+.d-pad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.d-pad {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #555;
+    box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.1),
+                inset -2px -2px 0px rgba(0, 0, 0, 0.5);
+
+    clip-path: url(#rounded-dpad-shape);
+}
+
+/* O resto do CSS para os botões e efeitos pode continuar exatamente o mesmo! */
+
+.d-pad-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    border-radius: 5px; /* Adicionamos um border-radius aqui para o hover/active casar com a forma */
+}
+
+.up    { top: 0; left: 40px; }
+.right { top: 40px; right: 0; }
+.down  { bottom: 0; left: 40px; }
+.left  { top: 40px; left: 0; }
+
+.d-pad-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.up::after    { border-width: 0 7px 10px 7px; border-color: transparent transparent #333 transparent; }
+.right::after { border-width: 7px 0 7px 10px; border-color: transparent transparent transparent #333; }
+.down::after  { border-width: 10px 7px 0 7px; border-color: #333 transparent transparent transparent; }
+.left::after  { border-width: 7px 10px 7px 0; border-color: transparent #333 transparent transparent; }
+
+.d-pad-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.d-pad-button:active {
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+@media (min-width: 450px) {
+    .site {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+        min-height: 100vh;
+        background-color: #c6b7be;
+    }
+
+    .gameboy {
+        border-radius: 1em 1em 7em 1em;
+        background-color: var(--bg-color);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .line-horizontal {
+        margin-top: 1.5em;
+    }
+}
+
+body {
     background-color: var(--bg-color);
+}
+
+@media  (max-width: 450px) {
+    .site {
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .gameboy {
+        margin-top: 2.5em;
+    }
+}
+
+.game-boy-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,24 +252,5 @@ nav {
 .line-horizontal {
     width: 100%;
     height: 8px;
-    position: absolute;
     background-color: var(--border-color);
-    top: 3%;
-}
-
-.line-vertical {
-    width: 8px;
-    height: 3.5%;
-    position: absolute;
-    background-color: var(--border-color);
-}
-
-.line-vertical.left {
-    left: 10%;
-    right: auto;
-}
-
-.line-vertical.right {
-    left: auto;
-    right: 10%;
 }

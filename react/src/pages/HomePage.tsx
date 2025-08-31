@@ -1,4 +1,4 @@
-import enzoAvatar from "../assets/enzo-avatar.png"
+import enzoAvatar from "../assets/images/enzo-avatar.png"
 
 function HomePage() {
     return (

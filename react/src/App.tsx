@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<GameBoyLayout />}>
         <Route index element={<HomePage />} />
         <Route path='/projects' element={<ProjectPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contacts" element={<ContactPage />} />
       </Route>
     </Routes>
   )
