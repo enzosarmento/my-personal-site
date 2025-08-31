@@ -31,8 +31,8 @@ function About() {
                 I'm a developer, I love to code and I'm always looking for new challenges to learn and improve my skills.
             </p>
             <div className="text-center">
-                <button>
-                    DONWLOAD CV
+                <button className="button-red" onClick={() => console.log("Test")}>
+                        DONWLOAD CV
                 </button>
             </div>
         </section>

@@ -8,6 +8,21 @@
     --buton-color: #D95763;
 }
 
+html {
+    cursor: url('./assets/cursors/cursor.png') 24 24, auto;
+}
+
+a,
+button,
+label,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+[role="button"],
+.clickable {
+    cursor: url('./assets/cursors/pointer.png') 24 24, pointer;
+}
+
 @font-face {
     font-family: 'PressStart2P';
     src: url('./assets/fonts/PressStart2P-Regular.ttf');
@@ -27,8 +42,20 @@ h1 {
     font-family: 'Gameboy';
 }
 
-.home-page {
+nav {
+    min-width: 365px;
     max-width: 400px;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0;
+    font-family: 'EightBit';
+    text-transform: uppercase;
+}
+
+.home-page {
+    min-width: 365px;
+    max-width: 400px;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
     border: 2em solid var(--border-color);
@@ -52,6 +79,7 @@ h1 {
 
 .about {
     background-color: #F5F7FA;
+    border-radius: 0 0 1em 0;
     padding: 0.7em;
     color: var(--text-color);
 }
@@ -65,16 +93,22 @@ h1 {
     font-family: 'EightBit';
 }
 
-.about button {
+.button-red {
     background-color: var(--buton-color);
     color: white;
     font-family: 'Gameboy';
     padding: 0.5em 1em;
     border: 1px solid #000000;
     border-radius: 6px;
-    cursor: pointer;
     margin-top: 1em;
     box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.07s ease-in-out;
+}
+
+.button-red:active {
+    translate: 2px 2px;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.6);
+    border-color: #490f23;
 }
 
 .game-boy-layout {
