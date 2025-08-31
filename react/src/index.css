@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. Imports & Config
+   ========================================================================== */
 @import "tailwindcss";
 
 :root {
@@ -8,21 +11,9 @@
     --buton-color: #D95763;
 }
 
-html {
-    cursor: url('./assets/cursors/cursor.png') 24 24, auto;
-}
-
-a,
-button,
-label,
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-[role="button"],
-.clickable {
-    cursor: url('./assets/cursors/pointer.png') 24 24, pointer;
-}
-
+/* ==========================================================================
+   2. Global Styles, Fonts & Resets
+   ========================================================================== */
 @font-face {
     font-family: 'PressStart2P';
     src: url('./assets/fonts/PressStart2P-Regular.ttf');
@@ -38,10 +29,72 @@ input[type="button"],
     src: url('./assets//fonts/early-gameboy.ttf');
 }
 
+html {
+    cursor: url('./assets/cursors/cursor.png') 24 24, auto;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+a,
+button,
+label,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+[role="button"],
+.clickable {
+    cursor: url('./assets/cursors/pointer.png') 24 24, pointer;
+}
+
 h1 {
     font-family: 'Gameboy';
 }
 
+/* ==========================================================================
+   3. Layout Styles
+   ========================================================================== */
+.site {
+    /* Estilos base para mobile-first */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.gameboy {
+    margin-top: 2.5em;
+}
+
+.game-boy-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.home-page {
+    min-width: 365px;
+    max-width: 400px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--display-color);
+    border: 2em solid var(--border-color);
+    border-radius: 1em 1em 7em 1em;
+}
+
+.line-horizontal {
+    width: 100%;
+    height: 8px;
+    background-color: var(--border-color);
+}
+
+/* ==========================================================================
+   4. Component Styles
+   ========================================================================== */
+/* Navegação */
 nav {
     min-width: 365px;
     max-width: 400px;
@@ -57,16 +110,7 @@ nav a:hover {
     color: var(--buton-color);
 }
 
-.home-page {
-    min-width: 365px;
-    max-width: 400px;
-    min-height: 450px;
-    display: flex;
-    flex-direction: column;
-    border: 2em solid var(--border-color);
-    border-radius: 1em 1em 3em 1em;
-}
-
+/* Display e Conteúdo Interno */
 .display {
     display: flex;
     background-color: var(--display-color);
@@ -84,7 +128,7 @@ nav a:hover {
 
 .about {
     background-color: #F5F7FA;
-    border-radius: 0 0 1em 0;
+    border-radius: 0 0 5em 0;
     padding: 0.7em;
     color: var(--text-color);
 }
@@ -98,6 +142,7 @@ nav a:hover {
     font-family: 'EightBit';
 }
 
+/* Botões e Controles */
 .buttons {
     min-width: 365px;
     max-width: 420px;
@@ -127,13 +172,6 @@ nav a:hover {
     rotate: -25deg;
 }
 
-.button-red:active,
-.buttons-a-b button:active {
-    translate: 2px 2px;
-    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.6);
-    border-color: #490f23;
-}
-
 .buttons-a-b button {
     color: white;
     font-family: 'Gameboy';
@@ -147,6 +185,14 @@ nav a:hover {
     margin: 0 10px;
 }
 
+.button-red:active,
+.buttons-a-b button:active {
+    translate: 2px 2px;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.6);
+    border-color: #490f23;
+}
+
+/* D-Pad */
 .d-pad-container {
     display: flex;
     justify-content: center;
@@ -161,18 +207,15 @@ nav a:hover {
     background-color: #555;
     box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.1),
                 inset -2px -2px 0px rgba(0, 0, 0, 0.5);
-
     clip-path: url(#rounded-dpad-shape);
 }
-
-/* O resto do CSS para os botões e efeitos pode continuar exatamente o mesmo! */
 
 .d-pad-button {
     position: absolute;
     width: 40px;
     height: 40px;
     z-index: 2;
-    border-radius: 5px; /* Adicionamos um border-radius aqui para o hover/active casar com a forma */
+    border-radius: 5px;
 }
 
 .up    { top: 0; left: 40px; }
@@ -186,7 +229,7 @@ nav a:hover {
     width: 0;
     height: 0;
     border-style: solid;
-    left: 50%; 
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
@@ -204,53 +247,44 @@ nav a:hover {
     box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 32vh;
+    font-family: 'EightBit';
+    color: var(--text-color);
+    text-align: center;
+    padding: 1em;
+}
 
+/* ==========================================================================
+   5. Media Queries (Responsiveness)
+   ========================================================================== */
 @media (min-width: 450px) {
     .site {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding: 2em;
-        min-height: 100vh;
+        align-items: center;
         background-color: #c6b7be;
     }
 
     .gameboy {
+        margin-top: 0; /* Reseta a margem do mobile */
         border-radius: 1em 1em 7em 1em;
         background-color: var(--bg-color);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .game-boy-layout {
+      margin-top: 0;
+    }
+
+    .home-page {
+        min-width: 400px;
     }
 
     .line-horizontal {
         margin-top: 1.5em;
     }
-}
-
-body {
-    background-color: var(--bg-color);
-}
-
-@media  (max-width: 450px) {
-    .site {
-        display: flex;
-        justify-content: center;
-        min-height: 100vh;
-    }
-
-    .gameboy {
-        margin-top: 2.5em;
-    }
-}
-
-.game-boy-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.line-horizontal {
-    width: 100%;
-    height: 8px;
-    background-color: var(--border-color);
 }

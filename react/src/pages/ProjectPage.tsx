@@ -1,8 +1,8 @@
 function ProjectPage() {
     return (
-        <>
-            <h1>Project Page</h1>
-        </>
+        <section className="project">
+            <h1>Projects</h1>
+        </section>
     )
 }
 

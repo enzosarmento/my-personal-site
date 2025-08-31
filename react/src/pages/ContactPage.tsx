@@ -1,7 +1,9 @@
 function ContactPage() {
     return (
         <>
-            <h1>Contact Page</h1>
+            <section className="contact">
+                <h1>Contacts</h1>
+            </section>
         </>
     )
 }

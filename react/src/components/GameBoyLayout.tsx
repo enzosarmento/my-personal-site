@@ -1,8 +1,9 @@
-import { Outlet, Link } from "react-router-dom";
+import { useState } from "react";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 
 function GameBoyLayout() {
     return (
-        <div className="site">
+        <div className="site flex-col">
             <div className="gameboy">
                 <div className="line-horizontal"></div>
                 <div className="p-6 game-boy-layout">
@@ -20,11 +21,34 @@ function GameBoyLayout() {
                     </section>
                 </div>
             </div>
+            <nav>
+                <p>
+                    &copy; 2025 | Made with &#10084; Enzo Sarmento
+                </p>
+            </nav>
         </div>
     )
 }
 
 function DPad() {
+    const navigate = useNavigate();
+    const [page, setPage] = useState(0)
+    const listPages = ['', "projects", "contacts"]
+
+    const handleClick = (direction: 'next' | 'prev') => {
+        const totalPages = listPages.length;
+        let newPageIndex;
+
+        if (direction === 'next') {
+            newPageIndex = (page + 1) % totalPages;
+        } else {
+            newPageIndex = (page - 1 + totalPages) % totalPages;
+        }
+        
+        setPage(newPageIndex);
+        navigate(listPages[newPageIndex]);
+    };
+
     return(
         <>
             <svg width="0" height="0" style={{ position: 'absolute' }}>
@@ -35,10 +59,10 @@ function DPad() {
 
             <div className="d-pad-container">
                 <div className="d-pad">
-                    <a href="#" className="d-pad-button up"></a>
-                    <a href="#" className="d-pad-button right"></a>
-                    <a href="#" className="d-pad-button down"></a>
-                    <a href="#" className="d-pad-button left"></a>
+                    <button onClick={() => handleClick("next")} className="d-pad-button up"></button>
+                    <button onClick={() => handleClick("next")} className="d-pad-button right"></button>
+                    <button onClick={() => handleClick("prev")} className="d-pad-button down"></button>
+                    <button onClick={() => handleClick("prev")} className="d-pad-button left"></button>
                 </div>
             </div>
         </>

@@ -24,6 +24,9 @@ function Apresentation() {
 }
 
 function About() {
+
+    const fileUrl = "../assets/"
+
     return(
         <section className="about">
             <h2 className="">ABOUT ME</h2>
@@ -31,8 +34,10 @@ function About() {
                 I'm a developer, I love to code and I'm always looking for new challenges to learn and improve my skills.
             </p>
             <div className="text-center">
-                <button className="button-red" onClick={() => console.log("Test")}>
-                        DONWLOAD CV
+                <button className="button-red">
+                        <a href="/cv.pdf" download="CV_Enzo_Fernandes_Sarmento.pdf">
+                            DONWLOAD CV
+                        </a>
                 </button>
             </div>
         </section>
