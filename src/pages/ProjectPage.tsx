@@ -1,7 +1,10 @@
 function ProjectPage() {
     return (
-        <section className="project">
+        <section className="projects">
             <h1>Projects</h1>
+            <p>
+                coming soon...
+            </p>
         </section>
     )
 }

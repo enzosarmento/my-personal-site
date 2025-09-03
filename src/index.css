@@ -264,6 +264,77 @@ nav a:hover {
     padding: 1em;
 }
 
+.contacts,
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    text-align: center;
+}
+
+.contacts h1,
+.projects h1 {
+    font-size: 1.7em;
+    margin-bottom: 1em;
+}
+
+.contacts li,
+.projects li {
+    display: flex;
+    align-items: center;
+    font-family: 'EightBit';
+    text-transform: uppercase;
+    color: var(--text-color);
+    margin-bottom: 0.5em;
+}
+
+
+.contacts li {
+    position: relative;
+    padding-left: 30px; 
+}
+
+
+.contacts-arrow {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 24px;
+    height: auto;
+}
+
+.contacts li:hover .contacts-arrow {
+    opacity: 1;
+}
+
+.contacts li {
+    transition: color 0.2s ease-in-out;
+    margin-left: -2em;
+}
+
+.contacts li:hover,
+.projects li:hover {
+    color: #c6b7be;
+    cursor: url('./assets/cursors/pointer.png') 24 24, pointer;
+}
+
+.email {
+    text-transform: lowercase;
+}
+
+.projects p {
+    font-family: 'EightBit';
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
 /* ==========================================================================
    5. Media Queries (Responsiveness)
    ========================================================================== */
