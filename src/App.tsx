@@ -9,10 +9,10 @@ import NotFoundPage from './pages/NotFoundPage'
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<GameBoyLayout />}>
+      <Route path="/enzosarmento.github.io/" element={<GameBoyLayout />}>
         <Route index element={<HomePage />} />
-        <Route path='/projects' element={<ProjectPage />} />
-        <Route path="/contacts" element={<ContactPage />} />
+        <Route path='/enzosarmento.github.io/projects' element={<ProjectPage />} />
+        <Route path="/enzosarmento.github.io/contacts" element={<ContactPage />} />
 
         <Route path='*' element={<NotFoundPage/>} />
       </Route>
