@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://enzosarmento.github.io/enzosarmento.github.io",
+  "homepage": "https://enzosarmento.github.io",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
